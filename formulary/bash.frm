@@ -15,10 +15,11 @@ action:
 			configureOpts+=("--without-bash-malloc") # bash ships a malloc that is reportedly buggy accoridng to LFS docs.
 			time ./configure "${configureOpts[@]}"
 			echo ---
-			src="$(find)"
 			time make
 			echo ---
-			diff -U 0 -- <(echo "$src") <(find) | grep -v "^@@"
+			time make install
+			echo ---
+			find ./output -type f | xargs ls -lah
 outputs:
 	"bash":
 		tag: "bash"
