@@ -12,6 +12,7 @@ action:
 			cd *
 			configureOpts=()
 			configureOpts+=("--prefix=/task/build")
+			export CFLAGS="-static"
 			time ./configure "${configureOpts[@]}" || cat config.log
 			echo ---
 			time make
