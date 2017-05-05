@@ -25,7 +25,6 @@ action:
 			mkdir /task/output
 			mkdir /task/output/ship
 			mv /task/build/bin /task/output/ship
-
 outputs:
 	"/task/output/ship":
 		tag: "gawk"
