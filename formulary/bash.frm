@@ -13,7 +13,8 @@ action:
 			configureOpts=()
 			configureOpts+=("--prefix=/task/output")
 			configureOpts+=("--without-bash-malloc") # bash ships a malloc that is reportedly buggy accoridng to LFS docs.
-			time ./configure "${configureOpts[@]}"
+			export CFLAGS="-nostdlib"
+			time ./configure "${configureOpts[@]}" || cat config.log
 			echo ---
 			time make
 			echo ---
