@@ -1,5 +1,6 @@
 inputs:
 	"/":           {tag: "base-builder"}
+	"/app/gawk":   {tag: "gawk"}
 	"/src/glibc":  {tag: "glibc-src"}
 action:
 	command:
@@ -8,11 +9,11 @@ action:
 		- |
 			#!/bin/bash
 			set -euo pipefail
+			export PATH=/app/gawk/bin/:$PATH
 
 			configureOpts=()
 			configureOpts+=("--prefix=/task/output")
 			time /src/glibc/*/configure "${configureOpts[@]}" || cat config.log
-			## TODO next up: "needs gawk"
 			echo ---
 			time make
 			echo ---
