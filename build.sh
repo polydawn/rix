@@ -22,6 +22,8 @@ reppl init
 ### Let's build bash!
 reppl put hash  gawk-src  tUZmN1IEoZ_jVSZDv-2pDRQHneW2NqccCsWkyL88q0Cn-btLcTMvlS9WfNhmpgUO  --warehouse="http://ftp.gnu.org/gnu/gawk/gawk-4.1.4.tar.xz"
 reppl eval formulary/gawk.frm
+reppl eval formulary/gawk-test.frm
+exit
 reppl put hash  glibc-src  eSqmNRsnFdVR-AYY4e_BdIxI7Vs7iwLkoAREm8O1BPiVqn_fPd-fDTP_kwsHPpgY  --warehouse="http://ftp.gnu.org/gnu/glibc/glibc-2.25.tar.xz"
 reppl eval formulary/libc.frm
 reppl put hash  bash-src  L-hQ2kqY4HbmS18RV06JsYXnCv27DbeC3yZt_ol4mIjb6txuqi7_QniYKxfqVnk2  --warehouse="http://ftp.gnu.org/gnu/bash/bash-4.4.tar.gz"

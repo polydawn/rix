@@ -11,16 +11,22 @@ action:
 
 			cd *
 			configureOpts=()
-			configureOpts+=("--prefix=/task/output")
+			configureOpts+=("--prefix=/task/build")
 			time ./configure "${configureOpts[@]}" || cat config.log
 			echo ---
 			time make
 			echo ---
 			time make install
 			echo ---
-			find /task/output -type f | xargs ls -lah
+			find /task/build ! -type d | xargs ls -lah
+			echo ---
+			### Now we re-arrange some files for our own packaging idioms
+			mkdir /task/output
+			mkdir /task/output/ship
+			mv /task/build/bin /task/output/ship
+
 outputs:
-	"/task/output/bin":
+	"/task/output/ship":
 		tag: "gawk"
 		type: "tar"
 		silo: "file+ca://./wares/"
