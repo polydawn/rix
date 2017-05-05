@@ -23,6 +23,8 @@ reppl init
 reppl put hash  gawk-src  tUZmN1IEoZ_jVSZDv-2pDRQHneW2NqccCsWkyL88q0Cn-btLcTMvlS9WfNhmpgUO  --warehouse="http://ftp.gnu.org/gnu/gawk/gawk-4.1.4.tar.xz"
 reppl eval formulary/gawk.frm
 reppl eval formulary/gawk-test.frm
+reppl put hash  kernel-src  oQ-G18xgeR0mXhb2pu7VieCt_cBUsQOpqewpRTE8pnimFZygKsOaA7qNJzWaL-Oa  --warehouse="https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.9.9.tar.xz"
+reppl eval formulary/linux-headers.frm
 reppl put hash  glibc-src  eSqmNRsnFdVR-AYY4e_BdIxI7Vs7iwLkoAREm8O1BPiVqn_fPd-fDTP_kwsHPpgY  --warehouse="http://ftp.gnu.org/gnu/glibc/glibc-2.25.tar.xz"
 reppl eval formulary/libc.frm
 exit
