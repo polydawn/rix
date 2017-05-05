@@ -25,6 +25,8 @@ reppl eval formulary/gawk.frm
 reppl eval formulary/gawk-test.frm
 reppl put hash  kernel-src  oQ-G18xgeR0mXhb2pu7VieCt_cBUsQOpqewpRTE8pnimFZygKsOaA7qNJzWaL-Oa  --warehouse="https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.9.9.tar.xz"
 reppl eval formulary/linux-headers.frm
+#reppl put hash  gettext-src  2UAsJpNCBizLsFF7dImgn92dNRAZrtNcQz9_8rPcwtzq6LPOF-EISPOd8XcKl5m9  --warehouse="http://ftp.gnu.org/gnu/gettext/gettext-0.19.8.1.tar.xz"
+#reppl eval formulary/gettext.frm  ## gettext has a *ridiculously* sprawling dep tree: autotools, m4, and *perl*.  Let's not, if we can help it.
 reppl put hash  glibc-src  eSqmNRsnFdVR-AYY4e_BdIxI7Vs7iwLkoAREm8O1BPiVqn_fPd-fDTP_kwsHPpgY  --warehouse="http://ftp.gnu.org/gnu/glibc/glibc-2.25.tar.xz"
 reppl eval formulary/libc.frm
 exit
