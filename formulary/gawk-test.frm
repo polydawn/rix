@@ -12,4 +12,4 @@ action:
 
 			find /app/gawk -type d | xargs ls -lah
 			ldd /app/gawk/bin/gawk
-			/app/gawk/bin/gawk
+			/app/gawk/bin/gawk -h
