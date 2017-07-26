@@ -16,7 +16,7 @@ reppl init
 	# A snapshot of a fairly minimal ubuntu image.  Libc, bash, etc.  No build tools.
 	reppl put hash  base-foreign  aLMH4qK1EdlPDavdhErOs0BPxqO0i6lUaeRE4DuUmnNMxhHtF56gkoeSulvwWNqT  --warehouse="http+ca://repeatr.s3.amazonaws.com/assets/"
 	# A snapshot of an image with a C compiler.  This one happens to have musl libc as well.
-	reppl put hash  base-builder  FZLEqXTEPMCW9fey40kmwrLFsRV0sLUzq9tolC1AwxXcXPnXHyihkBR2no38Eo9L  --warehouse="http+ca://repeatr.s3.amazonaws.com/assets/"
+	reppl put hash  base-builder  QwPzkwQ88XokZt-KL-Qv88E1KqfxdukxDpxN2I5H3dnaoq5IAXY6DfzIzUQkT7WN  --warehouse="http+ca://repeatr.s3.amazonaws.com/assets/"
 }
 
 ### Let's build bash!
