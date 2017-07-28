@@ -20,14 +20,18 @@ reppl init
 }
 
 ### Let's build bash!
+## 'gawk' is one of the first things we need to bootstrap other toolchains.
+##   We build it statically to reduce the number of cyclic issues we have going forward.
 reppl put hash  gawk-src  tUZmN1IEoZ_jVSZDv-2pDRQHneW2NqccCsWkyL88q0Cn-btLcTMvlS9WfNhmpgUO  --warehouse="http://ftp.gnu.org/gnu/gawk/gawk-4.1.4.tar.xz"
 reppl eval formulary/gawk.frm
 reppl eval formulary/gawk-test.frm
+## "build" some snippets of linux kernel headers -- glibc needs these to link against.
 reppl put hash  kernel-src  oQ-G18xgeR0mXhb2pu7VieCt_cBUsQOpqewpRTE8pnimFZygKsOaA7qNJzWaL-Oa  --warehouse="https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.9.9.tar.xz"
 reppl eval formulary/linux-headers.frm
-reppl put hash  glibc-src  eSqmNRsnFdVR-AYY4e_BdIxI7Vs7iwLkoAREm8O1BPiVqn_fPd-fDTP_kwsHPpgY  --warehouse="http://ftp.gnu.org/gnu/glibc/glibc-2.25.tar.xz"
-reppl eval formulary/libc.frm
+## Okay, glibc time!
+reppl put hash  glibc-src    eSqmNRsnFdVR-AYY4e_BdIxI7Vs7iwLkoAREm8O1BPiVqn_fPd-fDTP_kwsHPpgY  --warehouse="http://ftp.gnu.org/gnu/glibc/glibc-2.25.tar.xz"
+reppl eval -f formulary/libc.frm
+
 exit
 reppl put hash  bash-src  L-hQ2kqY4HbmS18RV06JsYXnCv27DbeC3yZt_ol4mIjb6txuqi7_QniYKxfqVnk2  --warehouse="http://ftp.gnu.org/gnu/bash/bash-4.4.tar.gz"
 reppl eval formulary/bash.frm
-
